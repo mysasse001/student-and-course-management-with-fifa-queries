@@ -1,0 +1,21 @@
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+
+class Student extends Model
+{
+    use HasFactory;
+
+    protected $guarded = [];
+
+    public function user(){
+        return $this->belongsTo(User::class);
+    }
+
+    public function studentcourse(){
+        return $this->belongsToMany(Course::class,'student_course','student_id','course_id')->withTimestamps();
+    }
+}
