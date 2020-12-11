@@ -6,6 +6,7 @@ use App\Models\Course;
 use App\Models\Player;
 use App\Models\Student;
 use Illuminate\Support\Facades\View;
+use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -27,8 +28,14 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        View::share('students',Student::all());
-        View::share('courses',Course::all());
-        View::share('players',Player::all());
+        if(Schema::hasTable('students')){
+            View::share('students',Student::all());
+        }
+        if(Schema::hasTable('courses')){
+            View::share('courses',Course::all());
+        }
+        if(Schema::hasTable('players')){
+            View::share('players',Player::all());
+        }
     }
 }
