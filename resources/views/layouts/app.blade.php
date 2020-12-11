@@ -16,6 +16,8 @@
   <!-- Custom styles for this template -->
   <link href="{{ asset('dashboard/css/simple-sidebar.css') }}" rel="stylesheet">
 
+  @yield('styles')
+
 </head>
 
 <body>

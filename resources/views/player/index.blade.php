@@ -80,7 +80,9 @@
         <td>{{ $player->name }}</td>
         <td>{{ $player->height }}</td>
         <td>{{ $player->weight }}</td>
-        <td>  <form action="{{ route('player.delete',$player) }}" method="POST">
+        <td class="d-flex">
+             <a href="{{ route('player.edit',$player) }}" class="btn btn-primary">Edit</a>
+            <form action="{{ route('player.delete',$player) }}" method="POST">
         @csrf
         @method('DELETE')
         <button class="btn btn-primary" type="submit">delete</button>

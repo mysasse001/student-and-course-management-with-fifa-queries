@@ -32,6 +32,22 @@ class PlayerController extends Controller
         return back();
     }
 
+    public function edit(Player $player){
+        return view('player.edit',compact('player'));
+    }
+
+    public function update(Request $request,Player $player){
+        $data=$request->validate([
+            'team'=>[],
+            'name'=>[],
+            'number'=>[],
+            'height'=>[],
+            'weight'=>[]
+        ]);
+        $player->update($data);
+        return redirect()->route('player.index');
+    }
+
     public function destroy(Player $player){
         $player->delete();
         return back();

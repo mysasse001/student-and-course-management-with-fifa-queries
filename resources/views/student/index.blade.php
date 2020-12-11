@@ -53,7 +53,7 @@
           <form action="{{ route('student.delete',$student) }}" method="POST">
         @csrf
         @method('DELETE')
-        <button class="btn btn-primary" type="submit">deelete</button>
+        <button class="btn btn-primary" type="submit">delete</button>
         </form>
         <a href="{{ route('add.student.courses',$student) }}" class="btn btn-primary">Courses</a>
         </td>

@@ -43,5 +43,7 @@ Route::delete('course/{course}/delete',[CourseController::class,'destroy'])->nam
 //players
 Route::get('/players',[PlayerController::class,'index'])->name('player.index');
 Route::get('search',[PlayerController::class,'search'])->name('player.search');
+Route::get('player/{player}',[PlayerController::class,'edit'])->name('player.edit');
+Route::patch('player/{player}/update',[PlayerController::class,'update'])->name('player.update');
 Route::post('player/store',[PlayerController::class,'store'])->name('player.store');
 Route::delete('player/{player}/delete',[PlayerController::class,'destroy'])->name('player.delete');
