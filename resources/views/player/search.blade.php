@@ -11,7 +11,7 @@
         @endforeach
 
 
-        @if($teams->count())
+        @if($heights->count())
         @foreach ($heights as $player)
         <div>{{ $player->name }}</div>
         @endforeach
